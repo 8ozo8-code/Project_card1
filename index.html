@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신비한 타로 운세</title>
+    
+    <!-- Google Fonts: Noto Serif KR 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 프로젝트 구조: 추가 스타일 파일 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 via-indigo-950 to-gray-900 text-gray-200 font-['Noto_Serif_KR']">
+
+    <!-- 1. 상단 헤더 -->
+    <header class="py-6 flex flex-col justify-center items-center">
+        <h1 class="text-2xl font-bold text-purple-200 tracking-widest drop-shadow-[0_0_10px_rgba(216,180,254,0.5)]">신비한 타로 운세</h1>
+        <p class="text-sm text-purple-300/60 mt-1" id="today-date">오늘의 기운을 확인해보세요</p>
+    </header>
+
+    <!-- 2. 중앙 메인 (카드 프레임) -->
+    <main class="flex-1 flex justify-center items-center p-4">
+        <!-- Glassmorphism(반투명 유리) + 은은한 보라색 네온 글로우 -->
+        <div class="relative w-64 h-96 sm:w-72 sm:h-[28rem] rounded-xl 
+                    bg-purple-900/10 backdrop-blur-md 
+                    border border-purple-300/20 
+                    shadow-[0_0_40px_rgba(168,85,247,0.4)] 
+                    flex flex-col justify-center items-center text-center p-6">
+            
+            <!-- 결과가 표시될 영역 -->
+            <p id="fortune-text" class="text-lg text-purple-100 font-medium leading-relaxed drop-shadow-md">
+                카드를 뒷면으로<br>뒤집어 두었습니다.<br><br>아래 버튼을 눌러주세요.
+            </p>
+        </div>
+    </main>
+
+    <!-- 3. 하단 액션 (버튼) -->
+    <footer class="pb-12 pt-4 flex justify-center items-center">
+        <!-- 확대(scale) 및 빛 번짐(shadow) 호버 효과 추가 -->
+        <button id="draw-btn" class="px-8 py-4 bg-gradient-to-r from-yellow-600/30 to-amber-500/30 hover:from-yellow-500/40 hover:to-amber-400/40 backdrop-blur-md border border-yellow-400/60 text-yellow-50 text-lg font-bold rounded-full shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:shadow-[0_0_30px_rgba(250,204,21,0.7)] transform hover:scale-105 transition-all duration-300">
+            오늘의 운세 뽑기
+        </button>
+    </footer>
+
+    <!-- 프로젝트 구조: 데이터 및 메인 로직 파일 연결 -->
+    <script src="js/fortunes.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
